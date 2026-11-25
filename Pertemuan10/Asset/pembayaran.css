@@ -1,0 +1,468 @@
+/* --- Reset & Pengaturan Dasar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* --- Header (Coklat Tua) --- */
+header {
+    background-color: #4a2b29;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img-header {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.search-box {
+    background-color: #ffffff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    width: 100%;
+    max-width: 600px;
+    height: 45px;
+}
+
+.search-icon {
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    color: #333;
+    background: transparent;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+/* --- Navigasi Atas (Putih) --- */
+.top-nav-bar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 50px;
+    border-bottom: 1px solid #ddd;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #4a2b29;
+    text-decoration: underline;
+}
+
+/* --- Konten Utama (Split Screen) --- */
+.main-container {
+    display: flex;
+    flex: 1;
+    gap: 40px;
+    padding: 40px 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Kolom Kiri */
+.left-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Kolom Kanan */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Section Title --- */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+/* --- Kartu Alamat --- */
+.address-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.address-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.address-info p {
+    font-size: 14px;
+    color: #333;
+}
+
+.ubah-link {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ubah-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Kartu Produk --- */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #ffffff;
+}
+
+.product-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    /* Menambahkan border radius jika gambar kotak */
+    border: 1px solid #eee; 
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-details h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.note-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.note-input::placeholder {
+    color: #888;
+}
+
+.product-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* --- Kartu Pengiriman --- */
+.shipping-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    max-width: 50%;
+}
+
+.shipping-info h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.shipping-info p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* --- Kartu Pembayaran --- */
+.payment-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 0 20px;
+    background-color: #ffffff;
+}
+
+.payment-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.payment-option:last-child {
+    border-bottom: none;
+}
+
+.payment-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.payment-logo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Radio Button Styling */
+.payment-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #4a2b29; /* Warna coklat tua */
+    cursor: pointer;
+}
+
+/* --- Ringkasan Pesanan --- */
+.summary-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    background-color: #ffffff;
+}
+
+.summary-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+/* --- Tombol Pesan --- */
+.btn-pesan {
+    background-color: #4a2b29;
+    color: #ffffff;
+    border: none;
+    padding: 18px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-pesan:hover {
+    background-color: #36201f;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #4a2b29;
+    color: #ffffff;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 120px;
+}
+
+.footer-left {
+    display: flex;
+    gap: 120px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-wa {
+    fill: #25D366;
+}
+
+.icon-phone {
+    color: #ffffff;
+}
+
+.logo-img-footer {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    .left-section, .right-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px;
+        height: 80px;
+    }
+    .logo-img-header {
+        height: 35px;
+    }
+    .search-box {
+        height: 40px;
+        padding: 8px 15px;
+    }
+    .top-nav-bar {
+        padding: 10px 20px;
+        gap: 15px;
+        justify-content: center;
+    }
+    .product-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .shipping-card {
+        max-width: 100%;
+    }
+    footer {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .footer-left {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .footer-nav {
+        align-items: center;
+    }
+    .logo-img-footer {
+        height: 40px;
+    }
+}

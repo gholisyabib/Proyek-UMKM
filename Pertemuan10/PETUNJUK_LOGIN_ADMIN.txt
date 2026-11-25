@@ -1,0 +1,37 @@
+MADIN - LOGIN TERPISAH DAN PANEL ADMIN
+
+PANEL ADMIN BARU:
+- Buka Admin/login.php untuk login admin.
+- Akun harus memiliki kolom pengguna.peran = 'admin' dan status_akun = 'aktif'.
+- Jika belum ada akun admin, buat akun pelanggan melalui Pages/daftar.php lalu ubah kolom peran akun tersebut menjadi 'admin' di phpMyAdmin.
+- Halaman admin tersedia: Dashboard, Manajemen Produk, Manajemen Stok, Pesanan, Pengguna, Laporan Penjualan, dan Pengaturan Admin.
+
+LOGIN BERSAMA DI CHROME:
+- Portal admin menggunakan cookie sesi MADIN_ADMIN_SESSID.
+- Portal pelanggan menggunakan cookie sesi MADIN_USER_SESSID.
+- Karena nama cookie sesi berbeda, admin dan pelanggan bisa login bersamaan di browser yang sama. Logout salah satu portal tidak menghapus sesi portal lainnya.
+- Setiap halaman privat tetap memeriksa role di server. Login pelanggan ditolak di panel admin dan login admin ditolak di portal login pelanggan.
+
+CARA MENJALANKAN:
+1. Backup folder proyek dan database terlebih dahulu.
+2. Ekstrak folder Gua Rapihin5 ke htdocs (XAMPP) atau folder web server Anda.
+3. Jalankan Apache dan MySQL.
+4. Periksa Config/koneksi.php sesuai pengaturan MySQL lokal Anda.
+5. Buka Pages/login.php untuk pelanggan atau Admin/login.php untuk admin.
+6. Tidak perlu impor ulang SQL bila database madin_baru yang sekarang sudah memiliki tabel dan kolom yang digunakan aplikasi. File Config/madin_baru.sql disertakan sebagai referensi struktur, bukan instruksi untuk diimpor ulang.
+
+FITUR PANEL ADMIN:
+- Dashboard mengambil ringkasan dari database.
+- Produk dapat ditambah, diedit, dicari, dan dinonaktifkan. Penghapusan dilakukan secara nonaktif agar riwayat pesanan dan mutasi stok tidak rusak.
+- Stok dapat disesuaikan masuk/keluar dengan catatan mutasi.
+- Pesanan dapat dicari, dilihat detailnya, serta status pesanan dan pembayaran dapat diperbarui.
+- Data pelanggan dapat dilihat dan akun pelanggan dapat diaktifkan/nonaktifkan.
+- Laporan menghitung transaksi selesai dengan pembayaran berhasil pada rentang tanggal.
+- Pengaturan dapat mengubah nama, email, dan kata sandi admin.
+- Katalog Pages/halaman_menu.php dan detail_menu.php membaca produk aktif dari tabel produk.
+
+CATATAN:
+- QRIS masih menggunakan gambar statis. Pembayaran tidak diverifikasi otomatis oleh payment gateway; status pembayaran harus dikonfirmasi secara sah oleh admin.
+- Pengujian sintaks PHP dilakukan. Pengujian integrasi dengan MySQL aktif perlu dilakukan di XAMPP/hosting Anda karena lingkungan pemeriksaan ini tidak menyediakan ekstensi mysqli dan database proyek.
+- OTP/verifikasi email dan fitur reset kata sandi belum terintegrasi dengan layanan email/SMS.
+- Sebelum produksi, gunakan HTTPS, backup berkala, dan uji seluruh alur checkout/pembayaran pada salinan database terlebih dahulu.

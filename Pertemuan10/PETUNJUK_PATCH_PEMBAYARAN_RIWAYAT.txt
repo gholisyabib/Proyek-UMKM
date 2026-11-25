@@ -1,0 +1,9 @@
+PETUNJUK PATCH PEMBAYARAN DAN RIWAYAT MADIN
+
+1. Backup folder proyek lama terlebih dahulu.
+2. Ekstrak ZIP ini lalu salin isi folder "Gua Rapihin" ke folder proyek Anda (timpa file yang diminta), tanpa mengubah folder Asset/CSS.
+3. Tidak perlu import ulang SQL jika database madin_baru sudah memiliki tabel pesanan dan detail_pesanan sesuai Config/madin_baru.sql.
+4. Checkout kini membuat pesanan dan detail di database, total QRIS diambil dari pesanan tersebut, dan riwayat hanya menampilkan pesanan akun yang login.
+5. Biaya checkout yang digunakan saat ini: layanan Rp1.000 dan ongkir Rp5.000; ubah di Pages/pembayaran.php dan Pages/proses_pesanan.php jika aturan bisnis berbeda.
+6. QRIS masih menggunakan gambar statis, bukan QR dinamis dari payment gateway. Jangan menganggap pembayaran telah terverifikasi otomatis.
+7. Pastikan tabel pesanan/detail_pesanan tersedia. Jika database lama belum punya tabel/kolom yang dibutuhkan, backup database dan lakukan migrasi skema secara terpisah; jangan import ulang SQL secara membabi buta.

@@ -1,0 +1,284 @@
+/* --- Reset & Pengaturan Dasar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* --- Konten Utama (Area Putih) --- */
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- Logo Kanan Atas --- */
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- Judul Form --- */
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    color: #000000;
+}
+
+/* --- Notifikasi PHP --- */
+.alert-message {
+    text-align: center;
+    color: #d9534f;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* --- Formulir --- */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 25px;
+    border-radius: 50px;
+    border: 1px solid #cccccc;
+    font-size: 15px;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.3s;
+    font-weight: 500;
+}
+
+.input-group input::placeholder {
+    color: #b0b0b0;
+    font-weight: 500;
+}
+
+.input-group input:focus {
+    border-color: #4a2c2a;
+}
+
+/* --- Tautan (Belum Punya Akun & Lupa Kata Sandi) --- */
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.link-title {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.link-title:hover {
+    text-decoration: underline;
+}
+
+/* --- Teks Syarat & Ketentuan --- */
+.terms-text {
+    text-align: center;
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.terms-text strong {
+    font-weight: 700;
+}
+
+/* --- CSS Tambahan: Tautan Syarat & Ketentuan yang Bisa Diklik --- */
+.terms-link {
+    color: #000000;             /* Warna teks tetap hitam */
+    text-decoration: none;      /* Menghilangkan garis bawah default */
+    font-weight: 700;           /* Tetap tebal seperti tag <strong> */
+    transition: color 0.3s ease;/* Transisi halus saat hover */
+}
+
+.terms-link:hover {
+    text-decoration: underline; /* Garis bawah muncul saat di-hover */
+    color: #4a2b29;             /* Warna berubah coklat tua saat di-hover */
+}
+
+/* --- Tombol Masuk --- */
+.btn-masuk {
+    display: block;
+    margin: 0 auto;
+    background-color: #4a2c2a;
+    color: #ffffff;
+    border: none;
+    padding: 16px 70px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-masuk:hover {
+    background-color: #36201f;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #4A2B29;
+    color: #ffffff;
+    padding: 35px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+    gap: 120px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-wa {
+    fill: #25D366;
+}
+
+.icon-phone {
+    color: #ffffff;
+}
+
+.logo-img-footer {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo-white {
+    filter: brightness(0) invert(1);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .footer-left { gap: 50px; }
+    .logo-img-footer { height: 40px; }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    .logo-img {
+        height: 35px;
+    }
+
+    .page-title {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btn-masuk {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .footer-left {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .footer-nav, .footer-contact { align-items: center; }
+}

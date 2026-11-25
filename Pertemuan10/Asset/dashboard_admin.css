@@ -1,0 +1,313 @@
+/* style.css */
+
+/* ================= RESET & GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background-color: #4A3B3B;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.search-bar {
+    background: white;
+    border-radius: 20px;
+    padding: 8px 15px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+}
+
+.dashboard-label {
+    border: 1px solid white;
+    padding: 5px 30px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ================= LAYOUT CONTAINER ================= */
+.container {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 240px;
+    background-color: #F2F2F2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    background-color: #4A3B3B;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+}
+
+/* ================= PERBAIKAN FONT PROFIL ================= */
+/* "Dashboard" dibuat tebal (Bold) dan agak besar */
+.profile-info h3 {
+    font-size: 16px;
+    font-weight: 700; /* Bold */
+    color: #333;
+    margin-bottom: 2px;
+}
+
+/* "Admin" dibuat tipis (Normal) dan lebih kecil */
+.profile-info p {
+    font-size: 13px;
+    font-weight: 400; /* Normal/Tipis */
+    color: #666;
+}
+/* ========================================================= */
+
+.menu {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.menu li {
+    margin-bottom: 8px;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #333;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background-color: #e0e0e0;
+}
+
+.menu a.active {
+    background-color: #C4C4C4;
+    font-weight: bold;
+}
+
+.menu-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.logout {
+    margin-top: auto;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    flex: 1;
+    padding: 30px 50px;
+    background-color: #fff;
+}
+
+.main-search {
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 8px 20px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.main-search input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card {
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.card-header-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.btn-add {
+    background-color: #D9D9D9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 15px 10px;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+}
+
+td {
+    padding: 15px 10px;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+/* ================= SOLUSI FLEXBOX UNTUK KOLOM ================= */
+
+/* 1. Kolom Nama: Agar tombol Hapus/Edit ada di paling bawah */
+td.product-name-cell {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    min-height: 150px; 
+}
+
+.action-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    font-size: 12px;
+    margin-top: auto; /* Mendorong ke dasar sel */
+    margin-left: 5px; 
+    padding-top: 20px; 
+}
+
+.action-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.action-links a:hover {
+    color: #4A3B3B;
+}
+
+/* 2. Kolom Deskripsi: Agar link "Lihat Detail" ada di paling bawah */
+td.desc-cell {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 150px;
+}
+
+.detail-link {
+    margin-top: auto; /* Mendorong link ke dasar sel (di atas garis tabel) */
+    text-align: center;
+    display: block;
+    font-size: 12px;
+    padding-top: 20px; /* Jarak aman dari teks deskripsi */
+    text-decoration: underline; /* Opsional: memberi garis bawah agar terlihat seperti link */
+}
+
+/* ============================================================== */
+
+.product-img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.desc-text {
+    font-size: 10px;
+    color: #666;
+    max-width: 250px;
+    line-height: 1.2;
+}
+
+.status-warning {
+    color: red;
+    font-weight: bold;
+}
+
+.empty-space {
+    height: 100px;
+}

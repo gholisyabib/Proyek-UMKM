@@ -1,0 +1,372 @@
+/* --- Reset & Pengaturan Dasar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* --- Header (Coklat Tua) --- */
+header {
+    background-color: #4a2b29;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img-header {
+    height: 45px; /* Sesuaikan tinggi gambar logo di sini */
+    width: auto;
+    object-fit: contain;
+}
+
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.search-box {
+    background-color: #ffffff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    width: 100%;
+    max-width: 600px;
+    height: 45px;
+}
+
+.search-icon {
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    color: #333;
+    background: transparent;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+/* --- Navigasi Atas (Putih) --- */
+.top-nav-bar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 50px;
+    border-bottom: 1px solid #ddd;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #4a2b29;
+    text-decoration: underline;
+}
+
+/* --- Konten Utama (Split Screen) --- */
+.main-container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    min-height: calc(100vh - 90px - 50px - 120px);
+}
+
+/* Panel Kiri */
+.left-panel {
+    width: 40%;
+    position: relative;
+    background-color: #f0f0f0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Panel Kanan */
+.right-panel {
+    width: 60%;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+/* Header Menu */
+.menu-header {
+    margin-bottom: 20px;
+}
+
+.menu-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.menu-divider {
+    border: none;
+    border-top: 2px solid #333;
+    width: 100%;
+}
+
+/* Filter */
+.filter-container {
+    margin-bottom: 25px;
+}
+
+.filter-btn {
+    background-color: #ffffff;
+    border: 1px solid #333;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: #ffffff;
+    border-color: #333;
+}
+
+/* Grid Produk */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* --- CSS Tambahan untuk Link Menu --- */
+.menu-link {
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    color: inherit;        /* Mengembalikan warna teks menjadi hitam seperti semula */
+    display: block;        /* Memastikan seluruh area kartu bisa diklik */
+    width: 100%;
+}
+
+.menu-card {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efek hover agar kartu terlihat interaktif */
+.menu-link:hover .menu-card {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.menu-img-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #6b4a3a; /* Warna coklat background gambar menu */
+}
+
+.menu-img-container img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.menu-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.menu-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #4a2b29;
+    color: #ffffff;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 120px;
+}
+
+.footer-left {
+    display: flex;
+    gap: 120px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-wa {
+    fill: #25D366;
+}
+
+.icon-phone {
+    color: #ffffff;
+}
+
+.logo-img-footer {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        width: 100%;
+    }
+    .left-panel {
+        height: 40vh;
+    }
+    .right-panel {
+        padding: 30px;
+    }
+    .header-center {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px;
+        height: 80px;
+    }
+    .logo-img-header {
+        height: 35px;
+    }
+    .search-box {
+        height: 40px;
+        padding: 8px 15px;
+    }
+    .top-nav-bar {
+        padding: 10px 20px;
+        gap: 15px;
+        justify-content: center;
+    }
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    footer {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .footer-left {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .footer-nav {
+        align-items: center;
+    }
+    .logo-img-footer {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}

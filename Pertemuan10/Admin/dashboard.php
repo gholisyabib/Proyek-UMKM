@@ -1,0 +1,15 @@
+<?php
+require_once __DIR__ . '/../Config/koneksi.php'; require_once __DIR__ . '/../Config/auth.php'; madin_role_required('admin'); require_once __DIR__ . '/_layout.php';
+function one_value(mysqli $conn, string $sql): float { $r=mysqli_query($conn,$sql); if(!$r) return 0; $row=mysqli_fetch_row($r); return (float)($row[0]??0); }
+$totalProduk=one_value($conn,"SELECT COUNT(*) FROM produk WHERE status_produk <> 'nonaktif'");
+$totalPesanan=one_value($conn,"SELECT COUNT(*) FROM pesanan");
+$pesananAktif=one_value($conn,"SELECT COUNT(*) FROM pesanan WHERE status_pesanan NOT IN ('selesai','dibatalkan')");
+$penjualan=one_value($conn,"SELECT COALESCE(SUM(total),0) FROM pesanan WHERE status_pesanan='selesai' AND status_pembayaran='berhasil'");
+$stokRendah=one_value($conn,"SELECT COUNT(*) FROM produk WHERE status_produk <> 'nonaktif' AND stok <= 5");
+$recent=mysqli_query($conn,"SELECT id_pesanan,kode_pesanan,nama_pelanggan,total,status_pembayaran,status_pesanan,dibuat_pada FROM pesanan ORDER BY dibuat_pada DESC LIMIT 8");
+madin_admin_header('Dashboard','dashboard');
+?>
+<div class="admin-grid"><div class="stat-card"><div class="stat-label">Produk aktif</div><div class="stat-value"><?= number_format($totalProduk,0,',','.') ?></div></div><div class="stat-card"><div class="stat-label">Total pesanan</div><div class="stat-value"><?= number_format($totalPesanan,0,',','.') ?></div></div><div class="stat-card"><div class="stat-label">Pesanan berjalan</div><div class="stat-value"><?= number_format($pesananAktif,0,',','.') ?></div></div><div class="stat-card"><div class="stat-label">Penjualan selesai</div><div class="stat-value" style="font-size:22px"><?= madin_money($penjualan) ?></div></div><div class="stat-card"><div class="stat-label">Produk stok rendah (≤ 5)</div><div class="stat-value"><?= number_format($stokRendah,0,',','.') ?></div></div></div>
+<div class="admin-card"><h2>Pesanan terbaru</h2><table class="admin-table"><thead><tr><th>Kode</th><th>Pelanggan</th><th>Total</th><th>Pembayaran</th><th>Status pesanan</th><th>Tanggal</th><th></th></tr></thead><tbody><?php if($recent && mysqli_num_rows($recent)>0): while($row=mysqli_fetch_assoc($recent)): ?><tr><td><strong><?= madin_e($row['kode_pesanan']) ?></strong></td><td><?= madin_e($row['nama_pelanggan']) ?></td><td><?= madin_money($row['total']) ?></td><td><?= madin_e(madin_status_label($row['status_pembayaran'])) ?></td><td><?= madin_e(madin_status_label($row['status_pesanan'])) ?></td><td><?= madin_e(date('d/m/Y H:i',strtotime($row['dibuat_pada']))) ?></td><td><a class="btn-small secondary" href="pesanan.php?q=<?= rawurlencode($row['kode_pesanan']) ?>">Detail</a></td></tr><?php endwhile; else: ?><tr><td colspan="7" class="empty-state">Belum ada data pesanan.</td></tr><?php endif; ?></tbody></table></div>
+<div class="admin-card"><h2>Akses cepat</h2><div class="table-actions"><a class="btn" href="produk.php">Kelola produk</a><a class="btn secondary" href="pesanan.php">Kelola pesanan</a><a class="btn secondary" href="laporan.php">Lihat laporan</a></div></div>
+<?php madin_admin_footer(); ?>
